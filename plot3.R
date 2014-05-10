@@ -9,8 +9,11 @@ t<-strptime(paste(plotData$Date, plotData$Time), "%Y-%m-%d %H:%M:%S")
 s1<-as.numeric(levels(plotData$Sub_metering_1))[plotData$Sub_metering_1]
 s2<-as.numeric(levels(plotData$Sub_metering_2))[plotData$Sub_metering_2]
 s3<-plotData$Sub_metering_3
-plot(t, s1, type="n", ylab="Energy sub metering")
+plot(t, s1, type="n", ylab="Energy sub metering", xlab="")
 lines(t, s1, col="black")
 lines(t, s2, col="red")
 lines(t, s3, col="blue")
 legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col=c("black","red", "blue"), lwd=1)
+
+dev.copy(png, file="plot3.png")
+dev.off()

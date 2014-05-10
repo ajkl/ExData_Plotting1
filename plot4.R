@@ -22,7 +22,7 @@ lines(t, v)
 s1<-as.numeric(levels(plotData$Sub_metering_1))[plotData$Sub_metering_1]
 s2<-as.numeric(levels(plotData$Sub_metering_2))[plotData$Sub_metering_2]
 s3<-plotData$Sub_metering_3
-plot(t, s1, type="n", ylab="Energy sub metering")
+plot(t, s1, type="n", ylab="Energy sub metering", xlab="")
 lines(t, s1, col="black")
 lines(t, s2, col="red")
 lines(t, s3, col="blue")
@@ -32,3 +32,6 @@ legend("topright", bty="n", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_me
 grp<-as.numeric(levels(plotData$Global_reactive_power))[plotData$Global_reactive_power]
 plot(t, grp, xlab="datetime", ylab="Global_reactive_power", type="n")
 lines(t, grp)
+
+dev.copy(png, file="plot4.png")
+dev.off()

@@ -9,3 +9,6 @@ t<-strptime(paste(plotData$Date, plotData$Time), "%Y-%m-%d %H:%M:%S")
 plot(t, as.numeric(plotData$Global_active_power)/500, type="n", xlab="", ylab="Global Active Power (kilowatts)")
 lines(t, as.numeric(plotData$Global_active_power)/500)
 
+dev.copy(png, file="plot2.png")
+dev.off()
+
